@@ -15,7 +15,7 @@ export class CreateUsersComponent implements OnInit {
     isActive: new FormControl(true),
     firstname: new FormControl('',[
     Validators.required,
-    Validators.minLength(4),Validators.pattern('[a-zA-Z]')]),
+    Validators.minLength(4)]),
     lastname: new FormControl(''),
     age: new FormControl('',),
     company: new FormControl(''),
