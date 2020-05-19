@@ -37,7 +37,9 @@ export class ListUsersComponent implements OnInit {
 
    
   ngOnInit(): void {
-    this.getAllUser();   
+    this.getAllUser();  
+    
+    
   }
 
   //appel du service pour afficher la liste des utilisateurs
@@ -56,9 +58,25 @@ export class ListUsersComponent implements OnInit {
       }
     );
 
-
+    
+  
   }
 
+  OrderbyAge(){
+    this.users.sort(function (a, b) {
+  
+      return a.age - b.age;
+    });
+    console.log(this.filteredUser);
+  }
+  OrderbyFirstname(){
+    this.users.sort(function (a, b) {
+  
+       return a.firstname.localeCompare(b.firstname);
+    });
+    console.log(this.filteredUser);
+  }
+ 
   //appel du service pour mettre à jour isActive de l'utilisateur
   setStatus(user: Users) {
     user.isActive = !user.isActive;
